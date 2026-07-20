@@ -1,0 +1,81 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Axiom | Heronian Triangle Visualizer</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+
+<body class="bg-obsidian">
+  <div class="noise-overlay"></div>
+
+  <header class="glass-panel top-bar">
+    <div class="brand">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-gold">
+        <polygon points="12 2 22 20 2 20"></polygon>
+      </svg>
+      <span class="brand-name">AXIOM</span>
+    </div>
+    <nav class="nav-links">
+      <a href="#visualizer">Visualizer</a>
+      <a href="#api">API</a>
+      <a href="#docs">Documentation</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero-section">
+      <h1 class="hero-title">
+        Discrete Geometry.<br>
+        <span class="text-gold gradient-text">Rendered Beautifully.</span>
+      </h1>
+      <p class="hero-subtitle">
+        Explore the intersection of number theory and spatial geometry. Generate, visualize, and analyze primitive Heronian triangles with sub-millisecond precision.
+      </p>
+    </section>
+
+    <section id="visualizer" class="visualizer-grid">
+      <div class="glass-panel canvas-container">
+        <canvas id="triangleCanvas"></canvas>
+        <div class="canvas-controls">
+          <button id="btnGenerate" class="btn-primary">Generate Sequence</button>
+          <button id="btnAnimate" class="btn-secondary">Animate Morph</button>
+        </div>
+      </div>
+
+      <aside class="glass-panel data-panel">
+        <h2 class="panel-title">Telemetry</h2>
+        <div class="data-grid">
+          <div class="data-card">
+            <span class="data-label">Sides (a, b, c)</span>
+            <span id="valSides" class="data-value mono">--</span>
+          </div>
+          <div class="data-card">
+            <span class="data-label">Area</span>
+            <span id="valArea" class="data-value mono">--</span>
+          </div>
+          <div class="data-card">
+            <span class="data-label">Perimeter</span>
+            <span id="valPerimeter" class="data-value mono">--</span>
+          </div>
+          <div class="data-card">
+            <span class="data-label">Primitive</span>
+            <span id="valPrimitive" class="data-value mono">--</span>
+          </div>
+        </div>
+
+        <h2 class="panel-title mt-2">Sequence Queue</h2>
+        <ul id="sequenceList" class="sequence-list">
+          <!-- Populated via JS -->
+        </ul>
+      </aside>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
